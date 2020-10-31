@@ -13,13 +13,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 40
+            "count": 10
           },
           "testedCount": {
-            "count": 577
+            "count": 697
           },
           "waitingTime": {
-            "time": 80
+            "time": 30
           }
         },
         {
@@ -29,13 +29,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 40
+            "count": 10
           },
           "testedCount": {
-            "count": 483
+            "count": 600
           },
           "waitingTime": {
-            "time": 80
+            "time": 30
           }
         },
         {
@@ -45,13 +45,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 40
+            "count": 10
           },
           "testedCount": {
-            "count": 277
+            "count": 385
           },
           "waitingTime": {
-            "time": 80
+            "time": 30
           }
         }
       ]
@@ -67,7 +67,7 @@
             "count": 40
           },
           "testedCount": {
-            "count": 350
+            "count": 450
           },
           "waitingTime": {
             "time": 90
@@ -83,10 +83,10 @@
         {
           "name": "Odberové miesto číslo 5",
           "waitingCount": {
-            "count": 46
+            "count": 77
           },
           "testedCount": {
-            "count": 312
+            "count": 421
           },
           "waitingTime": {
             "time": 60
@@ -102,13 +102,13 @@
         {
           "name": "Odberové miesto číslo 6",
           "waitingCount": {
-            "count": 53
+            "count": 50
           },
           "testedCount": {
-            "count": 485
+            "count": 618
           },
           "waitingTime": {
-            "time": 60
+            "time": 50
           }
         }
       ]
