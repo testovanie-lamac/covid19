@@ -9,23 +9,8 @@ function initMap() {
         format: 'png',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'hQTcD1ASTmxsaLdgzev0K6Fts55chfw4'
+        accessToken: 'Y3bNLcAv2JuxjysGML4KX2aro6xLnqj7'
     }).addTo(window.map)
-
-    /*const legend = L.control({position: 'bottomleft'})
-    legend.onAdd = function () {
-        const div = L.DomUtil.create('div', 'info legend')
-        let labels = ['<strong>Čas</strong>']
-        labels.push('<i style="background:#7B7B7B">Neznámy</i>')
-        labels.push('<i style="background:#2AAD27">Do 10 minút</i>')
-        labels.push('<i style="background:#FFD326">Do 20 minút</i>')
-        labels.push('<i style="background:#CAC428">Do 40 minút</i>')
-        labels.push('<i style="background:#CB8427">Do 60 minút</i>')
-        labels.push('<i style="background:#CB2B3E">Nad 60 minút</i>')
-        div.innerHTML = labels.join('<br/>')
-        return div
-    };
-    legend.addTo(window.map);*/
 
     const reload = L.control({position: 'topright'})
     reload.onAdd = function () {
@@ -38,7 +23,6 @@ function initMap() {
     legend.onAdd = function () {
         const div = L.DomUtil.create('div', 'info legend')
         let labels = ['<strong>Počet čakajúcich</strong>']
-        labels.push('<i style="background:#7B7B7B">Neznámy</i>')
         labels.push('<i style="background:#2AAD27">Do 10</i>')
         labels.push('<i style="background:#FFD326">Do 20</i>')
         labels.push('<i style="background:#CAC428">Do 40</i>')
