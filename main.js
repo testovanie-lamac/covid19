@@ -83,19 +83,19 @@ function markerColor(value) {
 }
 
 function waitingTimeColor(waitingTime) {
-    return (waitingTime < 0) ? 'grey' :
-        (waitingTime <= 10) ? 'green' :
-            (waitingTime <= 20) ? 'yellowgreen' :
-                (waitingTime <= 40) ? 'gold' :
-                    (waitingTime <= 60) ? 'orange' : 'red';
+    return (waitingTime < 0) ? '#7B7B7B' :
+        (waitingTime <= 10) ? '#2AAD27' :
+            (waitingTime <= 20) ? '#FFD326' :
+                (waitingTime <= 40) ? '#CAC428' :
+                    (waitingTime <= 60) ? '#CB8427' : '#CB2B3E';
 }
 
 function waitingCountColor(waitingCount) {
-    return (waitingCount < 0) ? 'grey' :
-        (waitingCount <= 10) ? 'green' :
-            (waitingCount <= 20) ? 'yellowgreen' :
-                (waitingCount <= 40) ? 'gold' :
-                    (waitingCount <= 60) ? 'orange' : 'red';
+    return (waitingCount < 0) ? '#7B7B7B' :
+        (waitingCount <= 10) ? '#2AAD27' :
+            (waitingCount <= 20) ? '#FFD326' :
+                (waitingCount <= 40) ? '#CAC428' :
+                    (waitingCount <= 60) ? '#CB8427' : '#CB2B3E';
 }
 
 
