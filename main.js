@@ -112,7 +112,7 @@ function fetchData() {
 }
 
 function fetchLamac() {
-    fetch('data.json')
+    fetch('https://raw.githubusercontent.com/testovanie-lamac/covid19/main/data.json')
         .then(response => response.json())
         .then(json => {
                 json.locations.forEach(location => {
