@@ -8,7 +8,7 @@ function initMap() {
     // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        minZoom: 15,
+        minZoom: 13,
         maxZoom: 17,
         id: 'mapbox/streets-v11',
         style: 'main', // night
