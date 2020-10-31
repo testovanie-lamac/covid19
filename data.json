@@ -16,10 +16,10 @@
             "count": 60
           },
           "testedCount": {
-            "count": 370
+            "count": 423
           },
           "waitingTime": {
-            "time": 120
+            "time": 150
           }
         },
         {
@@ -32,10 +32,10 @@
             "count": 60
           },
           "testedCount": {
-            "count": 297
+            "count": 316
           },
           "waitingTime": {
-            "time": 120
+            "time": 150
           }
         },
         {
@@ -48,10 +48,10 @@
             "count": 60
           },
           "testedCount": {
-            "count": 210
+            "count": 243
           },
           "waitingTime": {
-            "time": 120
+            "time": 150
           }
         }
       ]
@@ -67,10 +67,10 @@
             "count": 60
           },
           "testedCount": {
-            "count": 270
+            "count": 310
           },
           "waitingTime": {
-            "time": 180
+            "time": 120
           }
         }
       ]
@@ -86,10 +86,10 @@
             "count": 65
           },
           "testedCount": {
-            "count": 243
+            "count": 275
           },
           "waitingTime": {
-            "time": 120
+            "time": 90
           }
         }
       ]
@@ -105,7 +105,7 @@
             "count": 50
           },
           "testedCount": {
-            "count": 352
+            "count": 440
           },
           "waitingTime": {
             "time": 90
