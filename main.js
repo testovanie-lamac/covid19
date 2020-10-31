@@ -1,6 +1,6 @@
 function initMap() {
     window.map = L.map('mapDiv', {
-        maxBounds: L.latLngBounds(L.latLng(48.2167, 17.0140), L.latLng(48.1765, 17.0687))
+        //maxBounds: L.latLngBounds(L.latLng(48.2167, 17.0140), L.latLng(48.1765, 17.0687))
     }).setView([48.1983, 17.0487], 15)
     const mapBoxToken = 'pk.eyJ1IjoidGVzdG92YW5pZS1sYW1hYyIsImEiOiJja2d5Mm5wZXgwcHJlMnNwZnNvamI0MGIyIn0.Zba11JtDpUTtIpdKhzI5fw'
     const tomtomToken = 'Y3bNLcAv2JuxjysGML4KX2aro6xLnqj7'
