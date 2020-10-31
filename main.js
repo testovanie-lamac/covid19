@@ -107,8 +107,8 @@ function fetchLamac() {
     })
         .then(response => response.json())
         .then(json => {
+                const allMarkers = []
                 json.locations.forEach(location => {
-
                     const avgWaitingCount = location.places.map(place => place.waitingCount.count).reduce((a, c) => a + c) / location.places.length
                     const markerClr = markerColor(avgWaitingCount)
                     const markers = L.markerClusterGroup({
@@ -140,9 +140,11 @@ function fetchLamac() {
                         markers.addLayer(createMarker(lat, lon, markerClr, place.name, tooltip));
 
                     })
-
+                    allMarkers.push(markers)
                     window.map.addLayer(markers);
                 })
+
+                window.map.fitBounds(new L.featureGroup(allMarkers).getBounds());
             }
         )
 }
