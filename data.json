@@ -67,7 +67,7 @@
             "count": 50
           },
           "testedCount": {
-            "count": 310
+            "count": 350
           },
           "waitingTime": {
             "time": 90
@@ -86,7 +86,7 @@
             "count": 62
           },
           "testedCount": {
-            "count": 275
+            "count": 313
           },
           "waitingTime": {
             "time": 50
@@ -105,7 +105,7 @@
             "count": 36
           },
           "testedCount": {
-            "count": 440
+            "count": 485
           },
           "waitingTime": {
             "time": 60
