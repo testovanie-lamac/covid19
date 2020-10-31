@@ -144,7 +144,7 @@ function fetchLamac() {
                     window.map.addLayer(markers);
                 })
 
-                window.map.fitBounds(new L.featureGroup(allMarkers).getBounds());
+                //window.map.fitBounds(new L.featureGroup(allMarkers).getBounds());
             }
         )
 }
