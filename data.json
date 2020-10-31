@@ -1,5 +1,5 @@
 {
-  "update": "2020-10-31T15:00:00.000Z",
+  "update": "2020-10-31T16:00:00.000Z",
   "locations": [
     {
       "name": "Športová hala Lamač Na barine",
@@ -13,13 +13,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 60
+            "count": 30
           },
           "testedCount": {
             "count": 423
           },
           "waitingTime": {
-            "time": 150
+            "time": 30
           }
         },
         {
@@ -29,13 +29,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 60
+            "count": 30
           },
           "testedCount": {
             "count": 316
           },
           "waitingTime": {
-            "time": 150
+            "time": 30
           }
         },
         {
@@ -45,13 +45,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 60
+            "count": 25
           },
           "testedCount": {
             "count": 243
           },
           "waitingTime": {
-            "time": 150
+            "time": 30
           }
         }
       ]
@@ -64,13 +64,13 @@
         {
           "name": "Odberové miesto číslo 4",
           "waitingCount": {
-            "count": 60
+            "count": 50
           },
           "testedCount": {
             "count": 310
           },
           "waitingTime": {
-            "time": 120
+            "time": 90
           }
         }
       ]
@@ -83,13 +83,13 @@
         {
           "name": "Odberové miesto číslo 5",
           "waitingCount": {
-            "count": 65
+            "count": 62
           },
           "testedCount": {
             "count": 275
           },
           "waitingTime": {
-            "time": 90
+            "time": 50
           }
         }
       ]
@@ -102,13 +102,13 @@
         {
           "name": "Odberové miesto číslo 6",
           "waitingCount": {
-            "count": 50
+            "count": 36
           },
           "testedCount": {
             "count": 440
           },
           "waitingTime": {
-            "time": 90
+            "time": 60
           }
         }
       ]
