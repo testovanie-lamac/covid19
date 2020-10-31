@@ -122,7 +122,7 @@ function fetchLamac() {
                     const markers = L.markerClusterGroup({
                         iconCreateFunction: function (cluster) {
                             return new L.DivIcon({
-                                html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+                                html: `<div><span>${cluster.getChildCount()}</span></div>`,
                                 className: `marker-cluster marker-cluster-small ${markerClr}` , iconSize: new L.Point(40, 40)
                             });
                         }
@@ -139,7 +139,7 @@ function fetchLamac() {
                         const waitingTimeClr = waitingTimeColor(waitingTime)
                         const waitingCountClr = waitingCountColor(waitingCount)
 
-                        const tooltip = `<b>${place.name}: ${location.name}</b>` +
+                        const tooltip = `<b>${place.name}: ${location.name}</b><br>` +
                             `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCount}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.waitingCount.update))}]
                             `Počet otestovaných: <b>${place.testedCount.count}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
                             `Odhadovaný čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b>` +//[Aktualizované: ${formatDate(new Date(place.waitingTime.update))}]
