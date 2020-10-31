@@ -1,5 +1,5 @@
 {
-  "update": "2020-10-31T19:00:00.000Z",
+  "update": "2020-10-31T20:00:00.000Z",
   "locations": [
     {
       "name": "Športová hala Lamač Na barine",
@@ -13,13 +13,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 10
+            "count": 5
           },
           "testedCount": {
-            "count": 697
+            "count": 757
           },
           "waitingTime": {
-            "time": 30
+            "time": -1
           }
         },
         {
@@ -29,13 +29,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 10
+            "count": 5
           },
           "testedCount": {
             "count": 600
           },
           "waitingTime": {
-            "time": 30
+            "time": -1
           }
         },
         {
@@ -45,13 +45,13 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 10
+            "count": 5
           },
           "testedCount": {
-            "count": 385
+            "count": 436
           },
           "waitingTime": {
-            "time": 30
+            "time": -1
           }
         }
       ]
@@ -64,13 +64,13 @@
         {
           "name": "Odberové miesto číslo 4",
           "waitingCount": {
-            "count": 40
+            "count": 10
           },
           "testedCount": {
-            "count": 450
+            "count": 480
           },
           "waitingTime": {
-            "time": 90
+            "time": -1
           }
         }
       ]
@@ -83,13 +83,13 @@
         {
           "name": "Odberové miesto číslo 5",
           "waitingCount": {
-            "count": 77
+            "count": 56
           },
           "testedCount": {
-            "count": 421
+            "count": 486
           },
           "waitingTime": {
-            "time": 60
+            "time": -1
           }
         }
       ]
@@ -102,13 +102,13 @@
         {
           "name": "Odberové miesto číslo 6",
           "waitingCount": {
-            "count": 50
+            "count": 10
           },
           "testedCount": {
-            "count": 618
+            "count": 670
           },
           "waitingTime": {
-            "time": 50
+            "time": -1
           }
         }
       ]
