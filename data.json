@@ -1,0 +1,117 @@
+{
+  "update": "2020-10-31T10:00:00.000Z",
+  "locations": [
+    {
+      "name": "Športová hala Lamač Na barine",
+      "lat": 48.198306,
+      "lon": 17.048763,
+      "places": [
+        {
+          "name": "Odberové miesto číslo 1",
+          "location": {
+            "lat": 48.198306,
+            "lon": 17.048763
+          },
+          "waitingCount": {
+            "count": 50
+          },
+          "testedCount": {
+            "count": 182
+          },
+          "waitingTime": {
+            "time": -1
+          }
+        },
+        {
+          "name": "Odberové miesto číslo 2",
+          "location": {
+            "lat": 48.198306,
+            "lon": 17.048763
+          },
+          "waitingCount": {
+            "count": 50
+          },
+          "testedCount": {
+            "count": 145
+          },
+          "waitingTime": {
+            "time": -1
+          }
+        },
+        {
+          "name": "Odberové miesto číslo 3",
+          "location": {
+            "lat": 48.198306,
+            "lon": 17.048763
+          },
+          "waitingCount": {
+            "count": 50
+          },
+          "testedCount": {
+            "count": 105
+          },
+          "waitingTime": {
+            "time": -1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Materská škola Bory",
+      "lat": 48.20733,
+      "lon": 17.02516,
+      "places": [
+        {
+          "name": "Odberové miesto číslo 4",
+          "waitingCount": {
+            "count": 120
+          },
+          "testedCount": {
+            "count": 160
+          },
+          "waitingTime": {
+            "time": -1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Hala Borinská 23/B",
+      "lat": 48.190807,
+      "lon": 17.049042,
+      "places": [
+        {
+          "name": "Odberové miesto číslo 5",
+          "waitingCount": {
+            "count": 74
+          },
+          "testedCount": {
+            "count": 126
+          },
+          "waitingTime": {
+            "time": -1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Telocvičňa na Malokarpatskom námestí",
+      "lat": 48.194981,
+      "lon": 17.050575,
+      "places": [
+        {
+          "name": "Odberové miesto číslo 6",
+          "waitingCount": {
+            "count": 50
+          },
+          "testedCount": {
+            "count": 187
+          },
+          "waitingTime": {
+            "time": -1
+          }
+        }
+      ]
+    }
+  ]
+}

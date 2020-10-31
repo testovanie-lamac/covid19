@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <script type="module" src="main.js"></script>
+    <title>Lamač - odberné miesta</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <script src="https://unpkg.com/browse/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="MarkerCluster.css"/>
+    <link rel="stylesheet" href="MarkerCluster.Default.css"/>
+    <script src="leaflet.markercluster.js"></script>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #mapDiv {
+            width: 100%;
+            height: 100%;
+        }
+
+        .marker-cluster.grey, .marker-cluster.grey div {
+            background-color: rgba(123, 123, 123, 0.6);
+        }
+
+        .marker-cluster.green, .marker-cluster.green div {
+            background-color: rgba(42, 173, 39, 0.6);
+        }
+
+        .marker-cluster.gold, .marker-cluster.gold div {
+            background-color: rgba(255, 211, 38, 0.6);
+        }
+
+        .marker-cluster.yellow, .marker-cluster.yellow div {
+            background-color: rgba(202, 196, 40, 0.6);
+        }
+
+        .marker-cluster.orange, .marker-cluster.orange div {
+            background-color: rgba(203, 132, 39, 0.6);
+        }
+
+        .marker-cluster.red, .marker-cluster.red div {
+            background-color: rgba(203, 43, 62, 0.6);
+        }
+
+        .legend, button {
+            font-size: x-large;
+        }
+
+        .leaflet-popup-content {
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+<div id="mapDiv"></div>
+</body>
+</html>
