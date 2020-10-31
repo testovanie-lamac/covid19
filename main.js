@@ -3,7 +3,7 @@ function initMap() {
     L.tileLayer('https://api.tomtom.com/map/1/tile/basic/{style}/{z}/{x}/{y}.{format}?key={accessToken}&tileSize={tileSize}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         minZoom: 15,
-        maxZoom: 16,
+        maxZoom: 18,
         id: 'mapbox/streets-v11',
         style: 'main', // night
         format: 'png',
