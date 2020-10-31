@@ -19,7 +19,7 @@
             "count": 304
           },
           "waitingTime": {
-            "time": 90
+            "time": 120
           }
         },
         {
@@ -35,7 +35,7 @@
             "count": 252
           },
           "waitingTime": {
-            "time": 90
+            "time": 120
           }
         },
         {
@@ -51,7 +51,7 @@
             "count": 177
           },
           "waitingTime": {
-            "time": 90
+            "time": 120
           }
         }
       ]
@@ -70,7 +70,7 @@
             "count": 240
           },
           "waitingTime": {
-            "time": 90
+            "time": 120
           }
         }
       ]
@@ -89,7 +89,7 @@
             "count": 194
           },
           "waitingTime": {
-            "time": 90
+            "time": 120
           }
         }
       ]
