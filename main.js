@@ -1,15 +1,21 @@
 function initMap() {
-    window.map = L.map('mapDiv').setView([48.1983, 17.0487], 15)
-    L.tileLayer('https://api.tomtom.com/map/1/tile/basic/{style}/{z}/{x}/{y}.{format}?key={accessToken}&tileSize={tileSize}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    window.map = L.map('mapDiv', {
+        maxBounds: L.latLngBounds(L.latLng(48.2167, 17.0140), L.latLng(48.1765, 17.0687))
+    }).setView([48.1983, 17.0487], 15)
+    const mapBoxToken = 'pk.eyJ1IjoidGVzdG92YW5pZS1sYW1hYyIsImEiOiJja2d5Mm5wZXgwcHJlMnNwZnNvamI0MGIyIn0.Zba11JtDpUTtIpdKhzI5fw'
+    const tomtomToken = 'Y3bNLcAv2JuxjysGML4KX2aro6xLnqj7'
+    //L.tileLayer('https://api.tomtom.com/map/1/tile/basic/{style}/{z}/{x}/{y}.{format}?key={accessToken}&tileSize={tileSize}', {
+    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         minZoom: 15,
-        maxZoom: 18,
+        maxZoom: 17,
         id: 'mapbox/streets-v11',
         style: 'main', // night
         format: 'png',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'Y3bNLcAv2JuxjysGML4KX2aro6xLnqj7'
+        accessToken: mapBoxToken
     }).addTo(window.map)
 
     const reload = L.control({position: 'topright'})
@@ -96,7 +102,9 @@ function fetchData() {
 }
 
 function fetchLamac() {
-    fetch('data.json')
+    fetch('data.json', {
+        cache: 'no-store'
+    })
         .then(response => response.json())
         .then(json => {
                 json.locations.forEach(location => {
@@ -107,7 +115,7 @@ function fetchLamac() {
                         iconCreateFunction: function (cluster) {
                             return new L.DivIcon({
                                 html: `<div><span>${cluster.getChildCount()}</span></div>`,
-                                className: `marker-cluster marker-cluster-small ${markerClr}` , iconSize: new L.Point(40, 40)
+                                className: `marker-cluster marker-cluster-small ${markerClr}`, iconSize: new L.Point(40, 40)
                             });
                         }
                     });
