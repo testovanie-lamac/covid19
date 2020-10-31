@@ -1,5 +1,5 @@
 {
-  "update": "2020-10-31T10:00:00.000Z",
+  "update": "2020-10-31T12:00:00.000Z",
   "locations": [
     {
       "name": "Športová hala Lamač Na barine",
@@ -64,7 +64,7 @@
         {
           "name": "Odberové miesto číslo 4",
           "waitingCount": {
-            "count": 120
+            "count": 40
           },
           "testedCount": {
             "count": 160
@@ -83,7 +83,7 @@
         {
           "name": "Odberové miesto číslo 5",
           "waitingCount": {
-            "count": 74
+            "count": 40
           },
           "testedCount": {
             "count": 126
