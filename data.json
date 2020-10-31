@@ -16,7 +16,7 @@
             "count": 55
           },
           "testedCount": {
-            "count": 304
+            "count": 370
           },
           "waitingTime": {
             "time": 120
@@ -32,7 +32,7 @@
             "count": 55
           },
           "testedCount": {
-            "count": 252
+            "count": 297
           },
           "waitingTime": {
             "time": 120
@@ -48,7 +48,7 @@
             "count": 55
           },
           "testedCount": {
-            "count": 177
+            "count": 210
           },
           "waitingTime": {
             "time": 120
@@ -67,10 +67,10 @@
             "count": 70
           },
           "testedCount": {
-            "count": 240
+            "count": 270
           },
           "waitingTime": {
-            "time": 120
+            "time": 180
           }
         }
       ]
@@ -86,7 +86,7 @@
             "count": 80
           },
           "testedCount": {
-            "count": 194
+            "count": 243
           },
           "waitingTime": {
             "time": 120
@@ -105,7 +105,7 @@
             "count": 54
           },
           "testedCount": {
-            "count": 300
+            "count": 352
           },
           "waitingTime": {
             "time": 90
