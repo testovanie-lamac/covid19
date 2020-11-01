@@ -134,7 +134,8 @@ function fetchLamac() {
 
                         const tooltip = `<b>${place.name}: ${location.name}</b><br>` +
                             `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCountString}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.waitingCount.update))}]
-                            `Počet otestovaných: <b>${place.testedCount.count}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
+                            `Počet otestovaných: <b>${place.testedCount.today}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
+                            `Počet celkovo otestovaných: <b>${place.testedCount.count+place.testedCount.today}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
                             `Odhadovaný čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b>` +//[Aktualizované: ${formatDate(new Date(place.waitingTime.update))}]
                             `<br><br>[Aktualizované: ${formatDate(new Date(json.update))}]`//[Aktualizované: ${formatDate(new Date(place.waitingTime.update))}]
 
