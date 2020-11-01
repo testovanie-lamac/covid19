@@ -20,11 +20,11 @@ function initMap() {
 
     const reload = L.control({position: 'topright'})
     reload.onAdd = function () {
-        const div = L.DomUtil.create('div', 'refresh legend')
+        const div = L.DomUtil.create('div', 'refresh')
         div.innerHTML = '<button onclick="window.location.reload()">Znovu načítať</button>'
         return div
     }
-    reload.addTo(window.map);
+    reload.addTo(window.map)
     const legend = L.control({position: 'bottomleft'})
     legend.onAdd = function () {
         const div = L.DomUtil.create('div', 'info legend')
@@ -36,8 +36,8 @@ function initMap() {
         labels.push('<i style="background:#CB2B3E">Nad 60</i>')
         div.innerHTML = labels.join('<br/>')
         return div
-    };
-    legend.addTo(window.map);
+    }
+    legend.addTo(window.map)
     fetchData()
 }
 
@@ -67,7 +67,7 @@ function markerColor(value) {
         (value <= 10) ? 'green' :
             (value <= 20) ? 'gold' :
                 (value <= 40) ? 'yellow' :
-                    (value <= 60) ? 'orange' : 'red';
+                    (value <= 60) ? 'orange' : 'red'
 }
 
 function waitingTimeColor(waitingTime) {
@@ -75,7 +75,7 @@ function waitingTimeColor(waitingTime) {
         (waitingTime <= 10) ? '#2AAD27' :
             (waitingTime <= 20) ? '#FFD326' :
                 (waitingTime <= 40) ? '#CAC428' :
-                    (waitingTime <= 60) ? '#CB8427' : '#CB2B3E';
+                    (waitingTime <= 60) ? '#CB8427' : '#CB2B3E'
 }
 
 function waitingCountColor(waitingCount) {
@@ -83,7 +83,7 @@ function waitingCountColor(waitingCount) {
         (waitingCount <= 10) ? '#2AAD27' :
             (waitingCount <= 20) ? '#FFD326' :
                 (waitingCount <= 40) ? '#CAC428' :
-                    (waitingCount <= 60) ? '#CB8427' : '#CB2B3E';
+                    (waitingCount <= 60) ? '#CB8427' : '#CB2B3E'
 }
 
 
@@ -104,7 +104,7 @@ function formatDateAndTime(date) {
 }
 
 function appendLeadingZeroes(n) {
-    return n <= 9 ? "0" + n : n;
+    return n <= 9 ? "0" + n : n
 }
 
 function printDate(date) {
@@ -119,8 +119,8 @@ function fetchData() {
     fetchLamac()
 }
 
-function proportionOfPositiveTest(place) {
-    return (place.positive.count * 100 / place.testedCount.count).toFixed(2);
+function proportionOfPositiveTest(positiveCount, testedCount) {
+    return (positiveCount * 100 / testedCount).toFixed(2)
 }
 
 function fetchLamac() {
@@ -129,7 +129,14 @@ function fetchLamac() {
     })
         .then(response => response.json())
         .then(json => {
-                const allMarkers = []
+                const updateString = formatTime(new Date(json.update))
+                let places = 0
+                let allWaitingTime = 0
+                let allWaitingCount = 0
+                let allTestedCount = 0
+                let allTestedCountToday = 0
+                let allPositiveCount = 0
+
                 json.locations.forEach(location => {
                     const avgWaitingCount = location.places.map(place => place.waitingCount.count).reduce((a, c) => a + c) / location.places.length
                     const markerClr = markerColor(avgWaitingCount)
@@ -138,14 +145,14 @@ function fetchLamac() {
                             return new L.DivIcon({
                                 html: `<div><span>${cluster.getChildCount()}</span></div>`,
                                 className: `marker-cluster marker-cluster-small ${markerClr}`, iconSize: new L.Point(40, 40)
-                            });
+                            })
                         }
-                    });
+                    })
 
                     location.places.forEach(place => {
                         const [lat, lon] = [location.lat, location.lon]
                         const waitingTime = place.waitingTime.time
-                        const waitingCount = place.waitingCount.count;
+                        const waitingCount = place.waitingCount.count
                         const waitingCountString = (waitingCount < 0) ? '-' : `~ ${waitingCount}`
                         const waitingTimeString = (waitingTime < 0) ? 'Neznámy' : `~ ${waitingTime} minút`
 
@@ -154,27 +161,65 @@ function fetchLamac() {
                         const waitingCountClr = waitingCountColor(waitingCount)
 
                         const tooltip = `<b>${place.name}: ${location.name}</b><br/>` +
-                            `Aktualizované: <b>${formatTime(new Date(json.update))}</b><br/><br/>` +
+                            `Aktualizované: <b>${updateString}</b><br/><br/>` +
 
-                            `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCountString}</b><br/>` +// [Aktualizované: ${formatDate(new Date(place.waitingCount.update))}]
-                            `Čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b><br/><br/>` +//[Aktualizované: ${formatDate(new Date(place.waitingTime.update))}]
+                            `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCountString}</b><br/>` +
+                            `Čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b><br/><br/>` +
 
-                            `Počet dnes otestovaných: <b>${place.testedCount.today}</b><br/>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
-                            `Počet celkovo otestovaných: <b>${place.testedCount.count + place.testedCount.today}</b><br/><br/>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
+                            `Počet dnes otestovaných: <b>${place.testedCount.today}</b><br/>` +
+                            `Počet celkovo otestovaných: <b>${place.testedCount.count + place.testedCount.today}</b><br/><br/>` +
 
                             `<b>Výsledky testov ${printDate(place.positive.update)}</b><br/>` +
                             `Počet otestovaných: <b>${place.testedCount.count}</b><br/>` +
                             `Počet pozitívnych výsledkov: <b>${place.positive.count}</b><br/>` +
-                            `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(place)}%</b>`
+                            `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(place.positive.count, place.testedCount.count)}%</b>`
 
-                        markers.addLayer(createMarker(lat, lon, markerClr, place.name, tooltip));
+                        markers.addLayer(createMarker(lat, lon, markerClr, place.name, tooltip))
+
+                        places++
+                        if (waitingTime > 0) {
+                            allWaitingTime += waitingTime
+                        }
+                        if (waitingCount > 0) {
+                            allWaitingCount += waitingCount
+                        }
+                        allTestedCount += place.testedCount.count
+                        allTestedCountToday += place.testedCount.today
+                        allPositiveCount += place.positive.count
 
                     })
-                    allMarkers.push(markers)
-                    window.map.addLayer(markers);
+                    window.map.addLayer(markers)
                 })
 
-                //window.map.fitBounds(new L.featureGroup(allMarkers).getBounds());
+                const stats = L.control({position: "bottomright"})
+
+                const avgWaitingCount = (allWaitingCount / places).toFixed(0);
+                const avgWaitingCountString = (avgWaitingCount < 0) ? '-' : `~ ${avgWaitingCount}`
+                const avgWaitingCountClr = waitingCountColor(avgWaitingCount)
+
+                const avgWaitingTimeString = (allWaitingTime < 0) ? 'Neznámy' : `~ ${allWaitingTime} minút`
+                const avgWaitingTime = (allWaitingTime / places).toFixed(2);
+                const avgWaitingTimeClr = waitingTimeColor(avgWaitingTime)
+
+                stats.onAdd = function () {
+                    const div = L.DomUtil.create('div', 'info stats')
+
+                    div.innerHTML = `<b>Lamač</b><br/>` +
+                        `Aktualizované: <b>${updateString}</b><br/><br/>` +
+
+                        `Priemerný počet čakajúcich: <b style="color: ${avgWaitingCountClr}">${avgWaitingCountString}</b><br/>` +
+                        `Priemerný čas čakania: <b style="color: ${avgWaitingTimeClr}">${avgWaitingTimeString}</b><br/><br/>` +
+
+                        `Počet dnes otestovaných: <b>${allTestedCountToday}</b><br/>` +
+                        `Počet celkovo otestovaných: <b>${allTestedCount + allTestedCountToday}</b><br/><br/>` +
+
+                        `<b>Výsledky testov k 31.10.2020</b><br/>` +
+                        `Počet otestovaných: <b>${allTestedCount}</b><br/>` +
+                        `Počet pozitívnych výsledkov: <b>${allPositiveCount}</b><br/>` +
+                        `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(allPositiveCount, allTestedCount)}%</b>`
+                    return div
+                }
+                stats.addTo(window.map)
             }
         )
 }
