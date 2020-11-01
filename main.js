@@ -129,13 +129,15 @@ function fetchLamac() {
     })
         .then(response => response.json())
         .then(json => {
-                const updateString = formatTime(new Date(json.update))
+                const update = new Date(json.update);
+                const updateString = formatTime(update)
                 let places = 0
                 let allWaitingTime = 0
                 let allWaitingCount = 0
                 let allTestedCount = 0
                 let allTestedCountToday = 0
                 let allPositiveCount = 0
+                let allPositiveCountToday = 0
 
                 json.locations.forEach(location => {
                     const avgWaitingCount = location.places.map(place => place.waitingCount.count).reduce((a, c) => a + c) / location.places.length
@@ -166,10 +168,17 @@ function fetchLamac() {
                             `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCountString}</b><br/>` +
                             `Čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b><br/><br/>` +
 
-                            `Počet dnes otestovaných: <b>${place.testedCount.today}</b><br/>` +
-                            `Počet celkovo otestovaných: <b>${place.testedCount.count + place.testedCount.today}</b><br/><br/>` +
+                            /*`<b>Predbežné výsledky testov</b><br/>` +*/
+                            `Počet otestovaných: <b>${place.testedCount.count + place.testedCount.today}</b><br/>` +
+                            `Počet pozitívnych výsledkov: <b>${place.positive.count + place.positive.today}</b><br/>` +
+                            `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(place.positive.count + place.positive.today, place.testedCount.count + place.testedCount.today)}%</b><br/><br/>` +
 
-                            `<b>Výsledky testov ${printDate(place.positive.update)}</b><br/>` +
+                            `<b>Priebežné výsledky testov za ${formatDate(update)}</b><br/>` +
+                            `Počet otestovaných: <b>${place.testedCount.today}</b><br/>` +
+                            `Počet pozitívnych výsledkov: <b>${place.positive.today}</b><br/>` +
+                            `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(place.positive.today, place.testedCount.today)}%</b><br/><br/>` +
+
+                            `<b>Výsledky testov za 31.10.2020</b><br/>` +
                             `Počet otestovaných: <b>${place.testedCount.count}</b><br/>` +
                             `Počet pozitívnych výsledkov: <b>${place.positive.count}</b><br/>` +
                             `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(place.positive.count, place.testedCount.count)}%</b>`
@@ -186,6 +195,7 @@ function fetchLamac() {
                         allTestedCount += place.testedCount.count
                         allTestedCountToday += place.testedCount.today
                         allPositiveCount += place.positive.count
+                        allPositiveCountToday += place.positive.today
 
                     })
                     window.map.addLayer(markers)
@@ -210,10 +220,16 @@ function fetchLamac() {
                         `Priemerný počet čakajúcich: <b style="color: ${avgWaitingCountClr}">${avgWaitingCountString}</b><br/>` +
                         `Priemerný čas čakania: <b style="color: ${avgWaitingTimeClr}">${avgWaitingTimeString}</b><br/><br/>` +
 
-                        `Počet dnes otestovaných: <b>${allTestedCountToday}</b><br/>` +
-                        `Počet celkovo otestovaných: <b>${allTestedCount + allTestedCountToday}</b><br/><br/>` +
+                        `Počet otestovaných: <b>${allTestedCount + allTestedCountToday}</b><br/>` +
+                        `Počet pozitívnych výsledkov: <b>${allPositiveCount + allPositiveCountToday}</b><br/>` +
+                        `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(allPositiveCount + allPositiveCountToday, allTestedCount + allTestedCountToday)}%</b><br/><br/>` +
 
-                        `<b>Výsledky testov k 31.10.2020</b><br/>` +
+                        `<b>Výsledky testov za ${formatDate(update)}</b><br/>` +
+                        `Počet otestovaných: <b>${allTestedCountToday}</b><br/>` +
+                        `Počet pozitívnych výsledkov: <b>${allPositiveCountToday}</b><br/>` +
+                        `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(allPositiveCountToday, allTestedCountToday)}%</b><br/><br/>` +
+
+                        `<b>Výsledky testov za 31.10.2020</b><br/>` +
                         `Počet otestovaných: <b>${allTestedCount}</b><br/>` +
                         `Počet pozitívnych výsledkov: <b>${allPositiveCount}</b><br/>` +
                         `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(allPositiveCount, allTestedCount)}%</b>`

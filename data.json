@@ -20,8 +20,8 @@
             "count": 747
           },
           "positive": {
-            "count": 5,
-            "update": "2020-10-31T21:15:00.000Z"
+            "today": 0,
+            "count": 5
           },
           "waitingTime": {
             "time": 0
@@ -41,8 +41,8 @@
             "count": 646
           },
           "positive": {
-            "count": 10,
-            "update": "2020-10-31T21:15:00.000Z"
+            "today": 1,
+            "count": 10
           },
           "waitingTime": {
             "time": 0
@@ -62,8 +62,8 @@
             "count": 469
           },
           "positive": {
-            "count": 1,
-            "update": "2020-10-31T21:15:00.000Z"
+            "today": 1,
+            "count": 1
           },
           "waitingTime": {
             "time": 0
@@ -86,8 +86,8 @@
             "count": 517
           },
           "positive": {
-            "count": 4,
-            "update": "2020-10-31T21:15:00.000Z"
+            "today": 0,
+            "count": 4
           },
           "waitingTime": {
             "time": 0
@@ -110,8 +110,8 @@
             "count": 589
           },
           "positive": {
-            "count": 1,
-            "update": "2020-10-31T21:15:00.000Z"
+            "today": 0,
+            "count": 1
           },
           "waitingTime": {
             "time": 0
@@ -134,8 +134,8 @@
             "count": 733
           },
           "positive": {
-            "count": 1,
-            "update": "2020-10-31T21:15:00.000Z"
+            "today": 2,
+            "count": 1
           },
           "waitingTime": {
             "time": 0
