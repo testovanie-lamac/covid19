@@ -163,10 +163,10 @@ function fetchLamac() {
                         const waitingCountClr = waitingCountColor(waitingCount)
 
                         const tooltip = `<b>${place.name}: ${location.name}</b><br/>` +
-                            `Aktualizované: <b>${updateString}</b><br/><br/>` +
-
-                            `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCountString}</b><br/>` +
-                            `Čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b><br/><br/>` +
+                            // `Aktualizované: <b>${updateString}</b><br/><br/>` +
+                            //
+                            // `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCountString}</b><br/>` +
+                            // `Čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b><br/><br/>` +
 
                             /*`<b>Predbežné výsledky testov</b><br/>` +*/
                             `Počet otestovaných: <b>${place.testedCount.count + place.testedCount.today}</b><br/>` +
@@ -215,10 +215,10 @@ function fetchLamac() {
                     const div = L.DomUtil.create('div', 'info stats')
 
                     div.innerHTML = `<b>Lamač</b><br/>` +
-                        `Aktualizované: <b>${updateString}</b><br/><br/>` +
-
-                        `Priemerný počet čakajúcich: <b style="color: ${avgWaitingCountClr}">${avgWaitingCountString}</b><br/>` +
-                        `Priemerný čas čakania: <b style="color: ${avgWaitingTimeClr}">${avgWaitingTimeString}</b><br/><br/>` +
+                        // `Aktualizované: <b>${updateString}</b><br/><br/>` +
+                        //
+                        // `Priemerný počet čakajúcich: <b style="color: ${avgWaitingCountClr}">${avgWaitingCountString}</b><br/>` +
+                        // `Priemerný čas čakania: <b style="color: ${avgWaitingTimeClr}">${avgWaitingTimeString}</b><br/><br/>` +
 
                         `Počet otestovaných: <b>${allTestedCount + allTestedCountToday}</b><br/>` +
                         `Počet pozitívnych výsledkov: <b>${allPositiveCount + allPositiveCountToday}</b><br/>` +
