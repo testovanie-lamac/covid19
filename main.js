@@ -55,13 +55,11 @@ function coloredIcon(color) {
 }
 
 function createMarker(lat, lng, color, title, tooltip) {
-    console.log(`Adding N ${lat} E ${lng}, color ${color}, tooltip ${tooltip}`)
-    const urlRegexp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
     return L.marker([lat, lng], {
         title: title,
         icon: coloredIcon(color)
     })
-        .bindPopup(tooltip.replace('\n', '<br/>').replace(urlRegexp, "<a href='$1' target='_blank'>$1</a>"))
+        .bindPopup(tooltip, {minWidth: 500})
 }
 
 function markerColor(value) {
@@ -90,15 +88,39 @@ function waitingCountColor(waitingCount) {
 
 
 function formatDate(date) {
-    return `${appendLeadingZeroes(date.getHours())}:${appendLeadingZeroes(date.getMinutes())} ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
+    return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
+}
+
+function formatTime(date) {
+    return `${appendLeadingZeroes(date.getHours())}:${appendLeadingZeroes(date.getMinutes())}`
+}
+
+function formatTimeAndDate(date) {
+    return `${formatTime(date)} ${formatDate(date)}`
+}
+
+function formatDateAndTime(date) {
+    return `${formatDate(date)} ${formatTime(date)}`
 }
 
 function appendLeadingZeroes(n) {
     return n <= 9 ? "0" + n : n;
 }
 
+function printDate(date) {
+    return date === undefined ? "" : `k ${formatDate(new Date(date))}`
+}
+
+function printDateAndTime(date) {
+    return date === undefined ? "" : `k ${formatDateAndTime(new Date(date))}`
+}
+
 function fetchData() {
     fetchLamac()
+}
+
+function proportionOfPositiveTest(place) {
+    return (place.positive.count * 100 / place.testedCount.count).toFixed(2);
 }
 
 function fetchLamac() {
@@ -124,20 +146,26 @@ function fetchLamac() {
                         const [lat, lon] = [location.lat, location.lon]
                         const waitingTime = place.waitingTime.time
                         const waitingCount = place.waitingCount.count;
-                        console.log(`Adding ${place.name} - N ${lat} E ${lon} waiting time ${waitingTime}`)
-                        const waitingCountString = (waitingCount < 0) ? '-' : waitingCount
-                        const waitingTimeString = (waitingTime < 0) ? 'Neznámy' : `${waitingTime} minút`
+                        const waitingCountString = (waitingCount < 0) ? '-' : `~ ${waitingCount}`
+                        const waitingTimeString = (waitingTime < 0) ? 'Neznámy' : `~ ${waitingTime} minút`
 
                         const markerClr = markerColor(waitingCount)
                         const waitingTimeClr = waitingTimeColor(waitingTime)
                         const waitingCountClr = waitingCountColor(waitingCount)
 
-                        const tooltip = `<b>${place.name}: ${location.name}</b><br>` +
-                            `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCountString}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.waitingCount.update))}]
-                            `Počet otestovaných: <b>${place.testedCount.today}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
-                            `Počet celkovo otestovaných: <b>${place.testedCount.count+place.testedCount.today}</b><br>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
-                            `Odhadovaný čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b>` +//[Aktualizované: ${formatDate(new Date(place.waitingTime.update))}]
-                            `<br><br>[Aktualizované: ${formatDate(new Date(json.update))}]`//[Aktualizované: ${formatDate(new Date(place.waitingTime.update))}]
+                        const tooltip = `<b>${place.name}: ${location.name}</b><br/>` +
+                            `Aktualizované: <b>${formatTime(new Date(json.update))}</b><br/><br/>` +
+
+                            `Počet čakajúcich: <b style="color: ${waitingCountClr}">${waitingCountString}</b><br/>` +// [Aktualizované: ${formatDate(new Date(place.waitingCount.update))}]
+                            `Čas čakania: <b style="color: ${waitingTimeClr}">${waitingTimeString}</b><br/><br/>` +//[Aktualizované: ${formatDate(new Date(place.waitingTime.update))}]
+
+                            `Počet dnes otestovaných: <b>${place.testedCount.today}</b><br/>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
+                            `Počet celkovo otestovaných: <b>${place.testedCount.count + place.testedCount.today}</b><br/><br/>` +// [Aktualizované: ${formatDate(new Date(place.testedCount.update))}]
+
+                            `<b>Výsledky testov ${printDate(place.positive.update)}</b><br/>` +
+                            `Počet otestovaných: <b>${place.testedCount.count}</b><br/>` +
+                            `Počet pozitívnych výsledkov: <b>${place.positive.count}</b><br/>` +
+                            `Podiel pozitívnych výsledkov: <b>${proportionOfPositiveTest(place)}%</b>`
 
                         markers.addLayer(createMarker(lat, lon, markerClr, place.name, tooltip));
 
