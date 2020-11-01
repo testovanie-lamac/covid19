@@ -1,5 +1,5 @@
 {
-  "update": "2020-11-01T10:00:00.000Z",
+  "update": "2020-11-01T10:5:00.000Z",
   "locations": [
     {
       "name": "Športová hala Lamač Na barine",
@@ -13,11 +13,15 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 3
+            "count": 2
           },
           "testedCount": {
-            "today": 90,
+            "today": 122,
             "count": 747
+          },
+          "positive": {
+            "count": 5,
+            "update": "2020-10-31T21:15:00.000Z"
           },
           "waitingTime": {
             "time": 0
@@ -33,8 +37,12 @@
             "count": 3
           },
           "testedCount": {
-            "today": 58,
+            "today": 83,
             "count": 696
+          },
+          "positive": {
+            "count": 10,
+            "update": "2020-10-31T21:15:00.000Z"
           },
           "waitingTime": {
             "time": 0
@@ -50,8 +58,12 @@
             "count": 3
           },
           "testedCount": {
-            "today": 79,
+            "today": 83,
             "count": 469
+          },
+          "positive": {
+            "count": 1,
+            "update": "2020-10-31T21:15:00.000Z"
           },
           "waitingTime": {
             "time": 0
@@ -70,8 +82,12 @@
             "count": 0
           },
           "testedCount": {
-            "today": 64,
+            "today": 73,
             "count": 517
+          },
+          "positive": {
+            "count": 4,
+            "update": "2020-10-31T21:15:00.000Z"
           },
           "waitingTime": {
             "time": 0
@@ -87,11 +103,15 @@
         {
           "name": "Odberové miesto číslo 5",
           "waitingCount": {
-            "count": 12
+            "count": 0
           },
           "testedCount": {
-            "today": 143,
+            "today": 187,
             "count": 589
+          },
+          "positive": {
+            "count": 1,
+            "update": "2020-10-31T21:15:00.000Z"
           },
           "waitingTime": {
             "time": 0
@@ -110,8 +130,12 @@
             "count": 0
           },
           "testedCount": {
-            "today": 180,
+            "today": 222,
             "count": 733
+          },
+          "positive": {
+            "count": 1,
+            "update": "2020-10-31T21:15:00.000Z"
           },
           "waitingTime": {
             "time": 0
