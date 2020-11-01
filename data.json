@@ -13,7 +13,7 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 0
+            "count": -1
           },
           "testedCount": {
             "today": 203,
@@ -34,7 +34,7 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 0
+            "count": -1
           },
           "testedCount": {
             "today": 152,
@@ -55,7 +55,7 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 0
+            "count": -1
           },
           "testedCount": {
             "today": 149,
@@ -79,7 +79,7 @@
         {
           "name": "Odberové miesto číslo 4",
           "waitingCount": {
-            "count": 0
+            "count": -1
           },
           "testedCount": {
             "today": 115,
@@ -103,7 +103,7 @@
         {
           "name": "Odberové miesto číslo 5",
           "waitingCount": {
-            "count": 0
+            "count": -1
           },
           "testedCount": {
             "today": 290,
@@ -127,7 +127,7 @@
         {
           "name": "Odberové miesto číslo 6",
           "waitingCount": {
-            "count": 0
+            "count": -1
           },
           "testedCount": {
             "today": 357,
