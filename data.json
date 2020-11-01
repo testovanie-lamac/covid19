@@ -20,7 +20,7 @@
             "count": 747
           },
           "waitingTime": {
-            "time": -1
+            "time": 0
           }
         },
         {
@@ -37,7 +37,7 @@
             "count": 696
           },
           "waitingTime": {
-            "time": -1
+            "time": 0
           }
         },
         {
@@ -54,7 +54,7 @@
             "count": 469
           },
           "waitingTime": {
-            "time": -1
+            "time": 0
           }
         }
       ]
@@ -74,7 +74,7 @@
             "count": 517
           },
           "waitingTime": {
-            "time": -1
+            "time": 0
           }
         }
       ]
@@ -94,7 +94,7 @@
             "count": 589
           },
           "waitingTime": {
-            "time": -1
+            "time": 0
           }
         }
       ]
@@ -114,7 +114,7 @@
             "count": 733
           },
           "waitingTime": {
-            "time": -1
+            "time": 0
           }
         }
       ]
