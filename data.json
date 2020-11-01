@@ -1,5 +1,5 @@
 {
-  "update": "2020-11-01T14:00:00.000Z",
+  "update": "2020-11-01T15:00:00.000Z",
   "locations": [
     {
       "name": "Športová hala Lamač Na barine",
@@ -13,10 +13,10 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 3
+            "count": 0
           },
           "testedCount": {
-            "today": 169,
+            "today": 176,
             "count": 747
           },
           "positive": {
@@ -34,10 +34,10 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 3
+            "count": 0
           },
           "testedCount": {
-            "today": 105,
+            "today": 122,
             "count": 646
           },
           "positive": {
@@ -55,10 +55,10 @@
             "lon": 17.048763
           },
           "waitingCount": {
-            "count": 3
+            "count": 0
           },
           "testedCount": {
-            "today": 123,
+            "today": 135,
             "count": 469
           },
           "positive": {
@@ -82,7 +82,7 @@
             "count": 0
           },
           "testedCount": {
-            "today": 95,
+            "today": 101,
             "count": 517
           },
           "positive": {
@@ -106,7 +106,7 @@
             "count": 4
           },
           "testedCount": {
-            "today": 223,
+            "today": 242,
             "count": 589
           },
           "positive": {
@@ -130,7 +130,7 @@
             "count": 0
           },
           "testedCount": {
-            "today": 271,
+            "today": 293,
             "count": 733
           },
           "positive": {
